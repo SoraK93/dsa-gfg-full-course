@@ -19,7 +19,7 @@ def partition_index(arr, low, high):
             done = True
         else:
             arr[left], arr[right] = arr[right], arr[left]
-    print(A)
+    print(arr)
     
     arr[low], arr[right] = arr[right], arr[low]
     return right
