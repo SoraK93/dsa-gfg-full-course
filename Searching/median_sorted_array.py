@@ -1,6 +1,6 @@
 '''Median of Two Sorted Arrays'''
-array1 = [10, 20, 30, 40, 50]
-array2 = [5, 15, 25, 35, 45]
+array1 = [1,15,12,26,38]
+array2 = [2,30,13,17,45]
 
 # Naive Approach
 def concat_calc_median(arr1, arr2):
