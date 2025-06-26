@@ -42,3 +42,4 @@ def counting_sort(array, exponent, base):
 
 redix_sort(arr)
 print(arr)
+print(1//2)
