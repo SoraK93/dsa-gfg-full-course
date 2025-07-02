@@ -9,14 +9,18 @@ value = 17
 def pair_with_sum_naive(arr, total):
     """Nested loop Approach"""
     for i in range(len(arr)):
-        for j in range(i+1, len(arr)):
+        for j in range(i + 1, len(arr)):
             if arr[i] + arr[j] == total:
                 return True
     return False
 
 
 def pair_with_sum_hash(arr, total):
-    """Hashing Approach"""
+    """Hashing Approach
+    This problem can be solved efficiently by using the technique of hashing. Use a hash_map to check for the current
+    array value x(let), if there exists a value target_sum-x which on adding to the former gives target_sum.
+    This can be done in constant time.
+    """
     union_set = set()
     for num in arr:
         if total - num in union_set:
