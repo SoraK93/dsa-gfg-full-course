@@ -1,7 +1,6 @@
 """Subarray with Given Sum"""
 # There are no negative elements in the array
-array = [1, 4, 20, 3, 10, 5]
-total = 33
+from collections import defaultdict
 
 
 def given_sum_naive(arr, value):
@@ -32,5 +31,23 @@ def given_sum_window_sliding(arr, value):
     return False
 
 
+def given_sum_dict(arr, value):
+    """Using collection.defaultdict() to store count of all sum,
+    if any sum repeats or sum equals value then increment result"""
+    pre_sum = defaultdict(int)
+    pre_sum[0] = 1
+
+    calc, result = 0, 0
+    for num in arr:
+        calc += num
+        result += pre_sum[calc - value]
+        pre_sum[calc] += 1
+
+    return result
+
+
+array = [1, 4, 20, 3, 10, 5]
+total = 33
 print(given_sum_naive(array, total))
 print(given_sum_window_sliding(array, total))
+print(given_sum_dict(array, total))
